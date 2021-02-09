@@ -3,7 +3,7 @@ for pkg in `cat need-update`
 do
 set -euo pipefail
 
-FILE="$(basename "$0")"
+FILE="$(basename "${pkg}")"
 
 # Enable the multilib repository
 cat << EOM >> /etc/pacman.conf
