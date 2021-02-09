@@ -1,4 +1,6 @@
 #!/bin/bash
+for pkg in `cat need-update`
+do
 set -euo pipefail
 
 FILE="$(basename "$0")"
@@ -116,3 +118,4 @@ function namcap_check() {
 if [ -z "${INPUT_NAMCAPDISABLE:-}" ]; then
 	namcap_check
 fi
+done
