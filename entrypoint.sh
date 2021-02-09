@@ -2,7 +2,7 @@
 for pkg in `cat need-update`
 do
 set -euo pipefail
-
+pkg="$(pkgbuild/"${pkg}")"
 FILE="$(basename "${pkg}")"
 
 # Enable the multilib repository
