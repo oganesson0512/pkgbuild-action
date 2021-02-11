@@ -2,7 +2,7 @@
 for pkg in `cat need-update`
 do
 set -euo pipefail
-pkg="$(pkgbuild/"${pkg}")"
+cd pkgbuild/${pkg}/
 FILE="$(basename "${pkg}")"
 
 # Enable the multilib repository
@@ -118,4 +118,5 @@ function namcap_check() {
 if [ -z "${INPUT_NAMCAPDISABLE:-}" ]; then
 	namcap_check
 fi
+cd ../..
 done
